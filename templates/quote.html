@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <style>
+    body{font-family:Arial,sans-serif;font-size:12px;color:#111}
+    .row{display:flex;justify-content:space-between;align-items:center}
+    .box{border:1px solid #ddd;padding:8px;border-radius:6px;margin:6px 0}
+    .title{font-size:16px;font-weight:700}
+    .muted{color:#666}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid #ddd;padding:6px}
+    th{background:#f6f6f6}
+    .right{text-align:right}
+    .sm{font-size:10px}
+  </style>
+</head>
+<body>
+  <div class="row">
+    <img src="{{LOGO_URL}}" alt="logo" style="height:60px"/>
+    <div>
+      <div class="title">COTIZACIÓN {{QUOTE_NUMBER}}</div>
+      <div class="muted">Fecha Emisión: {{ISSUE_DATE}}</div>
+    </div>
+  </div>
+  <div class="box">
+    <strong>Cliente:</strong> {{CLIENT_NAME}} &nbsp; | &nbsp; <strong>RUC:</strong> {{CLIENT_RUC}}<br/>
+    <strong>Dirección:</strong> {{CLIENT_ADDRESS}}
+  </div>
+  <div class="box">
+    <strong>Descripción:</strong> {{DESCRIPTION}}<br/>
+    <strong>Peso total:</strong> {{WEIGHT}} kg<br/>
+    <strong>Recojo:</strong> {{PICKUP}}<br/>
+    <strong>Entrega:</strong> {{DROPOFF}}<br/>
+    <strong>Fecha de servicio:</strong> {{SERVICE_DATE}}<br/>
+    <strong>Permisos/Docs:</strong> {{PERMITS}}<br/>
+    <strong>Correo cotización:</strong> {{EMAIL}}
+  </div>
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Detalle</th><th class="right">V.U</th><th class="right">Importe</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Servicio de transporte</td><td class="right">{{SUBTOTAL}}</td><td class="right">{{SUBTOTAL}}</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="3" class="right">IGV (18%)</td><td class="right">{{IGV}}</td></tr>
+      <tr><td colspan="3" class="right"><strong>Total</strong></td><td class="right"><strong>{{TOTAL}}</strong></td></tr>
+    </tfoot>
+  </table>
+  <div class="box sm">{{FOOT_NOTES}}</div>
+</body>
+</html>
